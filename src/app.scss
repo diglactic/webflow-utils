@@ -1,0 +1,68 @@
+/**
+ * RESET
+ * -----
+ * Some sane defaults
+ */
+
+html {
+  font-size: 16px;
+}
+
+textarea {
+  // Disable textarea resizing
+  resize: none;
+}
+
+input, textarea, select {
+  // Disable iOS inset box shadows on inputs
+  -webkit-appearance: none;
+
+  // Force font-size to 16px to prevent iOS from zooming when focusing input
+  font-size: 1rem !important;
+}
+
+/**
+ * CUSTOM
+ * ------
+ * Unsupported Webflow styles
+ */
+
+.shape-outside-margin-box {
+  shape-outside: margin-box;
+}
+
+.display-inline-flex {
+  display: inline-flex;
+}
+
+.outline-none {
+  // Use to disable focus outline on elements with custom focus styles
+  outline: none;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.only-child-anchors-have-pointer-events {
+  pointer-events: none;
+}
+
+.only-child-anchors-have-pointer-events a {
+  pointer-events: all;
+}
+
+/**
+ * HACKS
+ */
+
+// Fix overflow + border-radius bug with iOS Safari
+// @see https://stackoverflow.com/questions/14383632/webkit-border-radius-and-overflow-bug-when-using-any-animation-transition/16681137#16681137
+.ios-overflow-with-border-radius-fix {
+  transform: translate3d(0, 0, 0);
+}
+
+// Fix multiline text gradient not rendering on iOS by breaking into multiple lines
+.text-gradient {
+  -webkit-box-decoration-break: clone;
+}
