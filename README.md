@@ -7,8 +7,8 @@
 
 ```html
 
-<script src="https://unpkg.com/@diglactic/webflow-utils@0.0.2/dist/webflow-utils.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/@diglactic/webflow-utils@0.0.2/dist/webflow-utils.css">
+<script src="https://unpkg.com/@diglactic/webflow-utils@0.0.3/dist/webflow-utils.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@diglactic/webflow-utils@0.0.3/dist/webflow-utils.css">
 ```
 
 ## Usage
