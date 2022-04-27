@@ -3,6 +3,16 @@ export const addWebflowHook = (callable) => {
     window.Webflow.push(callable);
 };
 
+export const ready = (callable) => {
+    addWebflowHook(() => {
+        if (['interactive', 'complete'].includes(document.readyState)) {
+            callable();
+        } else {
+            window.addEventListener('DOMContentLoaded', callable);
+        }
+    });
+};
+
 export const register = (namespace, property, registrationMethod) => {
     addWebflowHook(() => {
         window.WebflowUtils = window.wut ||= {};
@@ -31,11 +41,20 @@ import {getEnv, getPublishedDate} from "./lib/utils";
 import {onTabChange} from "./lib/tabs";
 import {pause as pauseYouTube, play as playYouTube} from "./lib/youtube";
 
+register(null, 'addWebflowHook', () => addWebflowHook);
+register(null, 'ready', () => ready);
 register(null, 'getEnv', () => getEnv);
 register(null, 'getPublishedDate', () => getPublishedDate);
 register(null, 'env', () => getEnv())
+register(null, 'register', () => register)
 
 register('tabs', 'onTabChange', () => onTabChange);
 
 register('youtube', 'play', () => playYouTube);
 register('youtube', 'pause', () => pauseYouTube);
+
+export default {
+    addWebflowHook,
+    ready,
+    register
+};
