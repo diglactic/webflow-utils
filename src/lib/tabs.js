@@ -1,6 +1,6 @@
 export const onTabChange = (selector, callback) => {
     document.querySelectorAll(`${selector}.w-tabs`).forEach((wfTabComponent) => {
-        let currentTabName = wfTabComponent.dataset.wTab;
+        let currentTabName = wfTabComponent.dataset.current;
 
         wfTabComponent.querySelectorAll('.w-tab-link').forEach((wfTabLink) => {
             (new MutationObserver(() => {
