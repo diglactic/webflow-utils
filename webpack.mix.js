@@ -5,5 +5,5 @@ const mix = require('laravel-mix');
 const config = require('./webpack.config.js');
 mix.webpackConfig(config);
 
-mix.js('src/app.js', 'dist')
-    .sass('src/app.scss', 'dist');
+mix.js('src/webflow-utils.js', 'dist')
+    .sass('src/webflow-utils.scss', 'dist');
