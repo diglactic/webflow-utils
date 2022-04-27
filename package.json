@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "development": "cross-env NODE_ENV=development webpack --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "dev": "npm run development",
+    "production": "cross-env NODE_ENV=production webpack --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production"
+  },
+  "devDependencies": {
+    "core-js": "^3.21.0",
+    "cross-env": "^7.0.3",
+    "dotenv-webpack": "^7.1.0",
+    "laravel-mix": "^6.0.41",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.49.7",
+    "sass-loader": "^12.4.0",
+    "webpack": "^5.68.0"
+  }
+}
