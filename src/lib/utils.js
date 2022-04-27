@@ -28,8 +28,8 @@ export const getEnv = () => {
         domainName,
         pageId,
         siteId,
-        isInDesigner: Webflow.env('design'),
-        isInEditor: Webflow.env('editor'),
+        isInDesigner: !!Webflow.env('design'),
+        isInEditor: !!Webflow.env('editor'),
         publishedAt: getPublishedDate()
     };
 };

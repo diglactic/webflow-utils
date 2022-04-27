@@ -4,8 +4,8 @@ export const onTabChange = (selector, callback) => {
 
         wfTabComponent.querySelectorAll('.w-tab-link').forEach((wfTabLink) => {
             (new MutationObserver(() => {
-                if (wfTabLink.classList.includes('w--current') && currentTabName !== wfTabLink.dataset.wTab) {
-                    currentTabName = wfTabLink.datset.wTab;
+                if (wfTabLink.classList.contains('w--current') && currentTabName !== wfTabLink.dataset.wTab) {
+                    currentTabName = wfTabLink.dataset.wTab;
                     callback(currentTabName);
                 }
             })).observe(wfTabLink, {attributes: true});
