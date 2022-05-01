@@ -39,7 +39,10 @@ export const onVisibilityChange = (domElement, callback) => {
         ({isIntersecting}) => {
             callback(isIntersecting);
         },
-        {root: document.body}
+        {
+            root: document.body,
+            threshold: 1.0
+        }
     )).observe(domElement);
 };
 
