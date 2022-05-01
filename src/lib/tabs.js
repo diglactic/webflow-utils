@@ -1,5 +1,5 @@
 export const onTabChange = (wfTabComponent, callback) => {
-    if (!wfTabComponent.classList.includes('w-tabs')) {
+    if (!wfTabComponent.classList.contains('w-tabs')) {
         throw new Error('Invalid tab component');
     }
 

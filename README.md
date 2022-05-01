@@ -7,8 +7,8 @@
 
 ```html
 
-<script src="https://unpkg.com/@diglactic/webflow-utils@0.0.5/dist/webflow-utils.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/@diglactic/webflow-utils@0.0.5/dist/webflow-utils.css">
+<script src="https://unpkg.com/@diglactic/webflow-utils@VERSION/dist/webflow-utils.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@diglactic/webflow-utils@VERSION/dist/webflow-utils.css">
 ```
 
 ## Usage
@@ -45,6 +45,14 @@ installation code above.
 ```shell
 npm install
 npm run build
+```
+
+## Publishing
+
+```shell
+npm run build
+npm version patch/minor/major
+npm publish
 ```
 
 &copy; 2022 Diglactic, LLC
