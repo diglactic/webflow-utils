@@ -34,7 +34,17 @@ export const getEnv = () => {
     };
 };
 
+export const onVisibilityChange = (domElement, callback) => {
+    (new IntersectionObserver(
+        ({isIntersecting}) => {
+            callback(isIntersecting);
+        },
+        {root: document.body}
+    )).observe(domElement);
+};
+
 export default {
     getPublishedDate,
-    getEnv
+    getEnv,
+    onVisibilityChange,
 };

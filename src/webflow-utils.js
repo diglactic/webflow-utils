@@ -34,13 +34,14 @@ export const register = (namespace, property, registrationMethod) => {
     window.wut['register'] = register;
 })();
 
-import {getEnv, getPublishedDate} from "./lib/utils";
+import {getEnv, getPublishedDate, onVisibilityChange} from "./lib/utils";
 import {onTabChange} from "./lib/tabs";
 import {pause as pauseYouTube, play as playYouTube} from "./lib/youtube";
 
 register('utils', 'getEnv', () => getEnv);
 register('utils', 'getPublishedDate', () => getPublishedDate);
-register('utils', 'env', () => getEnv())
+register('utils', 'env', () => getEnv());
+register('utils', 'onVisibilityChange', () => onVisibilityChange);
 
 register('tabs', 'onTabChange', () => onTabChange);
 
