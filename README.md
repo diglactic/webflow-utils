@@ -7,8 +7,8 @@
 
 ```html
 
-<script src="https://unpkg.com/@diglactic/webflow-utils@0.0.3/dist/webflow-utils.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/@diglactic/webflow-utils@0.0.3/dist/webflow-utils.css">
+<script src="https://unpkg.com/@diglactic/webflow-utils@0.0.5/dist/webflow-utils.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@diglactic/webflow-utils@0.0.5/dist/webflow-utils.css">
 ```
 
 ## Usage
@@ -24,16 +24,16 @@ installation code above.
     });
 
     wut.ready(function () {
-        var youtubeSelector = '.youtube-embed-selector';
+        var youtubeEmbed = document.querySelector('.youtube-embed-selector');
 
-        wut.youtube.play(youtubeSelector);
-        wut.youtube.pause(youtubeSelector);
+        wut.youtube.play(youtubeEmbed);
+        wut.youtube.pause(youtubeEmbed);
     });
 
     wut.ready(function () {
-        var tabsSelector = '.w-tabs';
+        var tabsComponent = document.querySelector('.w-tabs');
 
-        wut.tabs.onTabChange(tabsSelector, function (newTabName) {
+        wut.tabs.onTabChange(tabsComponent, function (newTabName) {
             alert('Tab changed to ' + newTabName);
         });
     });

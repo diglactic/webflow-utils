@@ -1,15 +1,17 @@
-export const onTabChange = (selector, callback) => {
-    document.querySelectorAll(`${selector}.w-tabs`).forEach((wfTabComponent) => {
-        let currentTabName = wfTabComponent.dataset.current;
+export const onTabChange = (wfTabComponent, callback) => {
+    if (!wfTabComponent.classList.includes('w-tabs')) {
+        throw new Error('Invalid tab component');
+    }
 
-        wfTabComponent.querySelectorAll('.w-tab-link').forEach((wfTabLink) => {
-            (new MutationObserver(() => {
-                if (wfTabLink.classList.contains('w--current') && currentTabName !== wfTabLink.dataset.wTab) {
-                    currentTabName = wfTabLink.dataset.wTab;
-                    callback(currentTabName);
-                }
-            })).observe(wfTabLink, {attributes: true});
-        });
+    let currentTabName = wfTabComponent.dataset.current;
+
+    wfTabComponent.querySelectorAll('.w-tab-link').forEach((wfTabLink) => {
+        (new MutationObserver(() => {
+            if (wfTabLink.classList.contains('w--current') && currentTabName !== wfTabLink.dataset.wTab) {
+                currentTabName = wfTabLink.dataset.wTab;
+                callback(currentTabName);
+            }
+        })).observe(wfTabLink, {attributes: true});
     });
 };
 

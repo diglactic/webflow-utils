@@ -1,11 +1,11 @@
 /**
  * @url https://developers.google.com/youtube/iframe_api_reference
  */
-export const dispatchCommand = (selector, func) => {
-    const targetIframe = document.querySelector(`${selector} > iframe`);
+export const dispatchCommand = (wfYouTubeEmbedComponent, func) => {
+    const targetIframe = wfYouTubeEmbedComponent.querySelector('iframe');
 
     if (!targetIframe) {
-        throw new Error('Couldn\'t find iframe within that selector');
+        throw new Error('Couldn\'t find iframe within embed');
     }
     if (targetIframe.src.indexOf('enablejsapi=1') < 0) {
         throw new Error(
