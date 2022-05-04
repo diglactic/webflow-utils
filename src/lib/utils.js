@@ -36,7 +36,7 @@ export const getEnv = () => {
 
 export const onVisibilityChange = (domElement, callback) => {
     (new IntersectionObserver(
-        ({isIntersecting}) => {
+        ([{isIntersecting}]) => {
             callback(isIntersecting);
         },
         {
