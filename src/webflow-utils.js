@@ -18,7 +18,7 @@ export const register = (namespace, property, registrationMethod) => {
         window.wut[namespace] ||= {};
 
         if (window.wut[namespace][property]) {
-            throw new Error(`${namespace}.${property} already registered`);
+            return false;
         }
 
         window.wut[namespace][property] = registrationMethod();
