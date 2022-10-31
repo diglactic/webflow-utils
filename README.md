@@ -49,9 +49,11 @@ npm run build
 
 ## Publishing
 
+Don't manually tag your commits! The following will handle that.
+
 ```shell
 npm run build
-npm version patch/minor/major
+npm version patch|minor|major
 npm publish
 ```
 
